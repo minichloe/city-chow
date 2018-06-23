@@ -47,6 +47,10 @@ app.use((err, req, res, next) => {
   res.status(err.status || 500).send(err.message || 'Internal server error.')
 })
 
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, '../client/build/index.html'))
+})
+
 const PORT = process.env.PORT || 5000
 
 app.listen(PORT, async () => {
