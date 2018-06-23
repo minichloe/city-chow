@@ -35,7 +35,7 @@ app.use(
 app.use(passport.initialize())
 app.use(passport.session())
 
-const staticFiles = express.static(path.join(__dirname, '../../client/build'))
+const staticFiles = express.static(path.join(__dirname, '../client/build'))
 app.use(staticFiles)
 
 app.use('/auth', require('./auth'))

@@ -7,7 +7,7 @@
     "start-dev": "NODE_ENV='development' concurrently --kill-others-on-fail \"npm run server\" \"npm run client\"",
     "start:prod": "cd server && npm run start:prod",
     "build": "concurrently \"cd client && npm run build\" \"cd server && npm run build\"",
-    "heroku-postbuild": "npm run build"
+    "heroku-postbuild": "cd client && npm install && npm run build"
   },
   "engines": {
     "node": "10.5.0"
