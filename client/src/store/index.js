@@ -18,9 +18,7 @@ const reducer = combineReducers({
   loading
 })
 
-const middleware = composeWithDevTools(
-  applyMiddleware(thunkMiddleware, createLogger({ collapsed: true }))
-)
+const middleware = applyMiddleware(thunkMiddleware)
 const store = createStore(reducer, middleware)
 
 export default store
