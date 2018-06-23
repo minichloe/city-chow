@@ -35,7 +35,7 @@ app.use(
 app.use(passport.initialize())
 app.use(passport.session())
 
-const staticFiles = express.static(path.join(__dirname, '../client/build'))
+const staticFiles = express.static(path.join(__dirname, '../../client/build'))
 app.use(staticFiles)
 
 app.use('/auth', require('./auth'))
@@ -48,7 +48,7 @@ app.use((err, req, res, next) => {
 })
 
 app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, '../client/build/index.html'))
+  res.sendFile(path.join(__dirname, '../../client/build/index.html'))
 })
 
 const PORT = process.env.PORT || 5000
